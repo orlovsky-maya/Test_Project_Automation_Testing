@@ -10,10 +10,20 @@ class MainPage(BasePage):
 
     # Getting
     def get_product_1(self):
-        return WebDriverWait(self.browser, self.timeout).until(EC.element_to_be_clickable(ProductsPageLocators.PRODUCT_1))
+        return WebDriverWait(self.browser, self.timeout).until(EC.element_to_be_clickable
+                                                               (ProductsPageLocators.PRODUCT_1))
 
     def get_cart(self):
-        return WebDriverWait(self.browser, self.timeout).until(EC.element_to_be_clickable(ProductsPageLocators.CART_BUTTON))
+        return WebDriverWait(self.browser, self.timeout).until(EC.element_to_be_clickable
+                                                               (ProductsPageLocators.CART_BUTTON))
+
+    def get_menu(self):
+        return WebDriverWait(self.browser, self.timeout).until(EC.element_to_be_clickable
+                                                               (ProductsPageLocators.MENU))
+
+    def get_link_about(self):
+        return WebDriverWait(self.browser, self.timeout).until(EC.element_to_be_clickable
+                                                               (ProductsPageLocators.ABOUT_LINK))
 
     # Actions
     def select_product_1(self):
@@ -22,8 +32,19 @@ class MainPage(BasePage):
     def click_cart(self):
         self.get_cart().click()
 
+    def click_menu(self):
+        self.get_menu().click()
+
+    def click_link_about(self):
+        self.get_link_about().click()
+
     # Methods
 
     def select_product(self):
         self.select_product_1()
         self.click_cart()
+
+    def select_menu_about(self):
+        self.click_menu()
+        self.click_link_about()
+        self.assert_url('https://saucelabs.com/')
