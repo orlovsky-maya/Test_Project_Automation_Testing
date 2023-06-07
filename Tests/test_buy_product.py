@@ -26,12 +26,12 @@ last_name = "Orlovskaya"
 postal_code = "12345"
 
 
-def test_buy_product():
+def test_buy_product_1():
     lp = LoginPage(browser, link)
     lp.authorization(user, password)
 
     mp = MainPage(browser, link)
-    mp.select_product()
+    mp.select_product_1()
 
     cp = CartPage(browser, link)
     cp.product_confirmation()
@@ -44,7 +44,26 @@ def test_buy_product():
 
     f = FinishPage(browser, link)
     f.finish()
-    print('FINISH')
+    print('FINISH_1')
 
 
+def test_buy_product_2():
+    lp = LoginPage(browser, link)
+    lp.authorization(user, password)
+
+    mp = MainPage(browser, link)
+    mp.select_product_2()
+
+    cp = CartPage(browser, link)
+    cp.product_confirmation()
+
+    cip = ClientInformationPage(browser, link)
+    cip.input_information(first_name, last_name, postal_code)
+
+    pp = PaymentPage(browser, link)
+    pp.payment()
+
+    f = FinishPage(browser, link)
+    f.finish()
+    print('FINISH_2')
 
