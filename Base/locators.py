@@ -11,7 +11,8 @@ class ProductsPageLocators:
     PRODUCT_HEADER = (By.CLASS_NAME, 'title')
     CART_BUTTON = (By.ID, 'shopping_cart_container')
     PRODUCT_1 = (By.ID, 'add-to-cart-sauce-labs-backpack')
-
+    MENU = (By.ID, 'react-burger-menu-btn')
+    ABOUT_LINK = (By.ID, 'about_sidebar_link')
 
 class CartPageLocators:
     CHECKOUT_BUTTON = (By.ID, 'checkout')
