@@ -13,6 +13,10 @@ class MainPage(BasePage):
         return WebDriverWait(self.browser, self.timeout).until(EC.element_to_be_clickable
                                                                (ProductsPageLocators.PRODUCT_1))
 
+    def get_product_2(self):
+        return WebDriverWait(self.browser, self.timeout).until(EC.element_to_be_clickable
+                                                               (ProductsPageLocators.PRODUCT_2))
+
     def get_cart(self):
         return WebDriverWait(self.browser, self.timeout).until(EC.element_to_be_clickable
                                                                (ProductsPageLocators.CART_BUTTON))
@@ -26,8 +30,11 @@ class MainPage(BasePage):
                                                                (ProductsPageLocators.ABOUT_LINK))
 
     # Actions
-    def select_product_1(self):
+    def click_select_product_1(self):
         self.get_product_1().click()
+
+    def click_select_product_2(self):
+        self.get_product_2().click()
 
     def click_cart(self):
         self.get_cart().click()
@@ -40,8 +47,12 @@ class MainPage(BasePage):
 
     # Methods
 
-    def select_product(self):
-        self.select_product_1()
+    def select_product_1(self):
+        self.click_select_product_1()
+        self.click_cart()
+
+    def select_product_2(self):
+        self.click_select_product_2()
         self.click_cart()
 
     def select_menu_about(self):
