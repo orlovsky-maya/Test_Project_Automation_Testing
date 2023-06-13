@@ -2,6 +2,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from Base.base_page import BasePage
 from Base.locators import *
+from Utilities.Logger import Logger
 
 
 class LoginPage(BasePage):
@@ -35,8 +36,12 @@ class LoginPage(BasePage):
     # Methods
 
     def authorization(self, login_name, login_password):
+        Logger.add_start_step(method='authorization')
+
         self.open()
         self.input_user_name(login_name)
         self.input_password(login_password)
         self.click_login_button()
         self.assert_word(self.get_main_word(), "Products")
+
+        Logger.add_end_step(url=self.browser.current_url, method='authorization')

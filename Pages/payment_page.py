@@ -1,9 +1,8 @@
-import time
-
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from Base.base_page import BasePage
 from Base.locators import *
+from Utilities.Logger import Logger
 
 
 class PaymentPage(BasePage):
@@ -21,4 +20,8 @@ class PaymentPage(BasePage):
     # Methods
 
     def payment(self):
+        Logger.add_start_step(method='payment')
+
         self.click_finish()
+
+        Logger.add_end_step(url=self.browser.current_url, method='payment')

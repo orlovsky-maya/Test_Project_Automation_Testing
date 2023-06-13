@@ -1,9 +1,8 @@
-import time
-
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from Base.base_page import BasePage
 from Base.locators import *
+from Utilities.Logger import Logger
 
 
 class MainPage(BasePage):
@@ -48,12 +47,20 @@ class MainPage(BasePage):
     # Methods
 
     def select_product_1(self):
+        Logger.add_start_step(method='select_product_1')
+
         self.click_select_product_1()
         self.click_cart()
 
+        Logger.add_end_step(url=self.browser.current_url, method='select_product_1')
+
     def select_product_2(self):
+        Logger.add_start_step(method='select_product_2')
+
         self.click_select_product_2()
         self.click_cart()
+
+        Logger.add_end_step(url=self.browser.current_url, method='select_product_2')
 
     def select_menu_about(self):
         self.click_menu()
