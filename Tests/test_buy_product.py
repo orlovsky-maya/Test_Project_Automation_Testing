@@ -4,6 +4,7 @@ from Pages.client_information_page import ClientInformationPage
 from Pages.payment_page import PaymentPage
 from Pages.finish_page import FinishPage
 from conftest import link
+import allure
 
 # User information
 first_name = "Maya"
@@ -11,6 +12,7 @@ last_name = "Orlovskaya"
 postal_code = "12345"
 
 
+@allure.description('Test buy product 1')
 def test_buy_product_1(browser, setup):
     mp = MainPage(browser, link)
     mp.select_product_1()
@@ -29,6 +31,7 @@ def test_buy_product_1(browser, setup):
     print('FINISH_1')
 
 
+@allure.description('Test buy product 2')
 def test_buy_product_2(browser, setup):
     mp = MainPage(browser, link)
     mp.select_product_2()
