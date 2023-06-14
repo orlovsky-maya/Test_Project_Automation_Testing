@@ -163,3 +163,4 @@ cython_debug/
 /requirements.txt
 /Screen/*.png
 /run_pytest.sh
+/allure_test_results/
