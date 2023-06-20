@@ -1,10 +1,46 @@
-# Building test project
-## Synopsys
-Stepik course Software Testing: Automation and Programming.Python.Selenium
+# Test Project Automation Testing
+The repository contains my solutions for "Creating a Project Structure" part.
 
-The repository contains "Building an Automation Project" part of Automation 
-and Programming.Python course on Stepik educational platform.
+[Task](https://stepik.org/lesson/761678/step/1?unit=763801)
 
-[The link on course](https://stepik.org/lesson/761678/step/1?unit=763801)
+"Automation Testing" course on Stepik educational platform.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/05f8593e-01da-4c5c-82a2-fc6b9f466a63/deploy-status)](https://app.netlify.com/sites/comfy-selkie-16f410/deploys)
+[Course](https://stepik.org/course/120491/info)
+
+
+## Website under test:
+[Website](https://www.saucedemo.com/)
+
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/orlovsky-maya/Test_Project_Automation_Testing/main/Images/Website_1.png" alt="Website_1" height="400" width="800">
+
+</p>
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/orlovsky-maya/Test_Project_Automation_Testing/main/Images/Website_2.png" alt="Website_2" height="400" width="800">
+
+</p>
+
+
+## Results of run:
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/orlovsky-maya/Test_Project_Automation_Testing/main/Images/Running_Tests.png" 
+alt="Running_Tests" height="200" width="700">
+
+</p>
+
+## Allure report:
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/orlovsky-maya/Test_Project_Automation_Testing/main/Images/Allure_Report_1.png" 
+alt="Allure_Report_1" height="400" width="800">
+
+</p>
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/orlovsky-maya/Test_Project_Automation_Testing/main/Images/Allure_Report_2.png" 
+alt="Allure_Report_2" height="400" width="800">
+
+</p>
