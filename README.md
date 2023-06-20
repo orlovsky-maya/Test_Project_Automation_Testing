@@ -26,7 +26,7 @@ The repository contains my solutions for "Creating a Project Structure" part.
 ## Results of run:
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/orlovsky-maya/Test_Project_Automation_Testing/main/Images/Running_Tests_2.png" 
+    <img src="https://raw.githubusercontent.com/orlovsky-maya/Test_Project_Automation_Testing/main/Images/Running_Tests.png" 
 alt="Running_Tests" height="400" width="800">
 
 </p>
