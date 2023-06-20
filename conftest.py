@@ -1,7 +1,9 @@
+import allure
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from Pages.login_page import LoginPage
+from Utilities.Logger import Logger
 
 link = 'https://www.saucedemo.com/'
 
@@ -22,7 +24,13 @@ def browser():
 
 
 @pytest.fixture(scope="function", autouse=True)
-def setup(browser):
-    lp = LoginPage(browser, link)
-    lp.authorization(user, password)
-    print("SETUP")
+def setup(browser, logger):
+    with allure.step('setup'):
+        lp = LoginPage(browser, link, logger)
+        lp.authorization(user, password)
+
+
+@pytest.fixture()
+def logger(request):
+    logger = Logger(request.config.rootdir)
+    return logger
