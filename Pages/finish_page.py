@@ -1,6 +1,5 @@
-from Base.base_page import BasePage
-from Utilities.Logger import Logger
 import allure
+from Base.base_page import BasePage
 
 
 class FinishPage(BasePage):
@@ -11,9 +10,9 @@ class FinishPage(BasePage):
 
     # Methods
 
-    def finish(self):
+    def finish(self, directory):
         with allure.step('finish'):
-            Logger.add_start_step(method='finish')
+            self.logger.add_start_step(method='finish')
             self.assert_url('https://www.saucedemo.com/checkout-complete.html')
-            self.get_screenshot()
-            Logger.add_end_step(url=self.browser.current_url, method='finish')
+            self.get_screenshot(directory)
+            self.logger.add_end_step(url=self.browser.current_url, method='finish')

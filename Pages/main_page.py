@@ -1,9 +1,8 @@
+import allure
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from Base.base_page import BasePage
 from Base.locators import *
-from Utilities.Logger import Logger
-import allure
 
 
 class MainPage(BasePage):
@@ -49,20 +48,22 @@ class MainPage(BasePage):
 
     def select_product_1(self):
         with allure.step('Select product 1'):
-            Logger.add_start_step(method='select_product_1')
+            self.logger.add_start_step(method='select_product_1')
             self.click_select_product_1()
             self.click_cart()
-            Logger.add_end_step(url=self.browser.current_url, method='select_product_1')
+            self.logger.add_end_step(url=self.browser.current_url, method='select_product_1')
 
     def select_product_2(self):
         with allure.step('Select product 2'):
-            Logger.add_start_step(method='select_product_2')
+            self.logger.add_start_step(method='select_product_2')
             self.click_select_product_2()
             self.click_cart()
-            Logger.add_end_step(url=self.browser.current_url, method='select_product_2')
+            self.logger.add_end_step(url=self.browser.current_url, method='select_product_2')
 
     def select_menu_about(self):
         with allure.step('Select menu about'):
+            self.logger.add_start_step(method='select_menu_about')
             self.click_menu()
             self.click_link_about()
             self.assert_url('https://saucelabs.com/')
+            self.logger.add_end_step(url=self.browser.current_url, method='select_menu_about')
