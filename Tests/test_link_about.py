@@ -4,9 +4,6 @@ from conftest import link
 
 
 @allure.description('Test link about')
-def test_link_about(browser, setup):
-    mp = MainPage(browser, link)
+def test_link_about(browser, setup, logger):
+    mp = MainPage(browser, link, logger)
     mp.select_menu_about()
-    print('FINISH about link')
-
-
