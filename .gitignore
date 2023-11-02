@@ -161,5 +161,4 @@ cython_debug/
 # PyCharm
 /.idea/
 /Screen/*.png
-/run_pytest.sh
 /allure_test_results/
