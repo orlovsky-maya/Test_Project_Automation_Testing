@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  standalone-firefox:
+    image: "selenium/standalone-firefox:latest"
+    ports:
+      - '4444:4444'
+      - '7900:7900'
+    container_name: firefox_grid
+    shm_size: 2g
+    attach: false
+    networks:
+      test_projecr_net:
+
+  pytest_runner:
+    build: .
+    image: "pytest_runner"
+    container_name: pytest_runner_works
+    networks:
+      test_projecr_net:
+    volumes:
+       - .:/test_project/
+    depends_on:
+      standalone-firefox:
+        condition: service_started
+
+networks:
+  test_projecr_net:

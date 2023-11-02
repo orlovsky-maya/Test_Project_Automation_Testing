@@ -6,7 +6,7 @@ class Logger:
     def __new__(cls, directory):
         if not hasattr(cls, 'instance'):
             logger = super(Logger, cls).__new__(cls)
-            now_date = datetime.datetime.utcnow().strftime("%Y_%m_%d.%H.%M.%S")
+            now_date = datetime.datetime.now(datetime.UTC)
             logger.file_name = f"{directory}/Logs/log_{now_date}.log"
 
             cls.instance = logger

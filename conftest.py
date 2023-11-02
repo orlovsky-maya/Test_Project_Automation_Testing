@@ -1,7 +1,6 @@
 import allure
 import pytest
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from Pages.login_page import LoginPage
 from Utilities.Logger import Logger
 
@@ -14,10 +13,13 @@ password = 'secret_sauce'
 
 @pytest.fixture(scope="function")
 def browser():
-    print("\nstart chrome browser for test..")
-    chrome_options = Options()
-    chrome_options.add_argument("--remote-debugging-port=9515")
-    browser = webdriver.Chrome(options=chrome_options)
+    print("\nstart firefox browser for test..")
+    firefox_options = webdriver.FirefoxOptions()
+    browser = webdriver.Remote(
+        command_executor='http://firefox_grid:4444',
+        options=firefox_options
+    )
+
     yield browser
     print("\nquit browser..")
     browser.quit()
