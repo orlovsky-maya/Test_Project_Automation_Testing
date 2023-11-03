@@ -22,7 +22,7 @@ class BasePage:
         assert value_word == result, "Incorrect result word"
 
     def get_screenshot(self, directory):
-        now_date = datetime.datetime.now(datetime.UTC)
+        now_date = datetime.datetime.utcnow().strftime("%Y_%m_%d.%H.%M.%S")
         name_screenshot = f'finish_scr_{now_date}.png'
         self.browser.save_screenshot(f'{directory}/Screen/{name_screenshot}')
 

@@ -1,17 +1,7 @@
 #!/bin/sh
 
-while [ "$(curl -s "http://firefox_grid:4444/status" | jq -r .value.ready)" != "true" ]; do
-    sleep 1
-done
-
-pytest --browser_name=firefox -v -s --alluredir=allure_test_results/firefox
-
-while [ "$(curl -s "http://chrome_grid:4444/status" | jq -r .value.ready)" != "true" ];
-do
-    sleep 1
-done
-
-pytest --browser_name=chrome -v -s --alluredir=allure_test_results/chrome
+pytest --browser_name=firefox --run_tests=local -v -s --alluredir=allure_test_results/firefox
+pytest --browser_name=chrome --run_tests=local -v -s --alluredir=allure_test_results/chrome
 
 # Prompt:
 # pytest -rxXs  # show extra info on xfailed, xpassed, and skipped tests
