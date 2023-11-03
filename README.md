@@ -47,6 +47,6 @@ alt="Allure_Report_2" height="400" width="800">
 
 ## Running the project
 
-In order to run from docker containers, use the command: docker compose up. 
+In order to run from docker containers, use the commands: docker compose up / docker compose down. 
 
-For run on a local machine, use the command: ./run_pytest.sh
+To run on a local machine, use the command: ./run_pytest.sh
