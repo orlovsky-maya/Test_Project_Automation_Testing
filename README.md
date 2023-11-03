@@ -44,3 +44,9 @@ alt="Allure_Report_1" height="400" width="800">
 alt="Allure_Report_2" height="400" width="800">
 
 </p>
+
+## Running the project
+
+In order to run from docker containers, use the command: docker compose up. 
+
+For run on a local machine, use the command: ./run_pytest.sh
