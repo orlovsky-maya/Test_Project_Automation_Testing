@@ -11,6 +11,17 @@ services:
     networks:
       test_projecr_net:
 
+  standalone-chrome:
+    image: "selenium/standalone-chrome:latest"
+    ports:
+      - '4445:4444'
+      - '7901:7900'
+    container_name: chrome_grid
+    shm_size: 2g
+    attach: false
+    networks:
+      test_projecr_net:
+
   pytest_runner:
     build: .
     image: "pytest_runner"
@@ -21,6 +32,8 @@ services:
        - .:/test_project/
     depends_on:
       standalone-firefox:
+        condition: service_started
+      standalone-chrome:
         condition: service_started
 
 networks:
